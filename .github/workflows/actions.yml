@@ -3,11 +3,11 @@ name: GHAssist
   push:
     branches:
       - main
-      - feature/*
+      - feature/*/main
   pull_request:
     branches:
       - main
-      - feature/*
+      - feature/*/main
 jobs:
   rules:
     name: Rules
