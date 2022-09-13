@@ -3,11 +3,9 @@ name: GHAssist
   push:
     branches:
       - development
-      - feature/*/main
   pull_request:
     branches:
       - development
-      - feature/*/main
 jobs:
   rules:
     name: Rules
@@ -25,3 +23,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo " The job was created here erer "
