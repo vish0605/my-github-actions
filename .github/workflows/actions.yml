@@ -20,4 +20,4 @@ jobs:
     steps:
       - name: Fetch Branch Name
         uses: aptyInc/gha-branch-name@master
-        id: validatio
+        id: validations
