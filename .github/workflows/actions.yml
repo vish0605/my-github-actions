@@ -15,6 +15,7 @@ jobs:
       should_deploy: '${{ steps.validations.outputs.should_deploy}}'
       non_prod_deploy: '${{ steps.validations.outputs.non_prod_deploy}}'
       prod_deploy: '${{ steps.validations.outputs.prod_deploy}}'
+      base_branch: '${{ steps.validations.outputs.baseBranch}}'
     steps:
       - name: Fetch Branch Name
         uses: aptyInc/gha-branch-name@master
