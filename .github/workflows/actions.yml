@@ -1,36 +1,23 @@
-name: GitHub Actions Demo
-on:
+name: GHAssist
+'on':
   push:
     branches:
-      -feature/*/main
+      - main
+      - feature/*
   pull_request:
     branches:
-      -feature/*/main
-      -main
+      - main
+      - feature/*
 jobs:
-  Explore-GitHub-Actions:
+  rules:
+    name: Rules
     runs-on: ubuntu-latest
+    outputs:
+      branch_name: '${{ steps.validations.outputs.branch_name }}'
+      should_deploy: '${{ steps.validations.outputs.should_deploy}}'
+      non_prod_deploy: '${{ steps.validations.outputs.non_prod_deploy}}'
+      prod_deploy: '${{ steps.validations.outputs.prod_deploy}}'
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-#   rules:
-#     name: Rules
-#     runs-on: ubuntu-latest
-#     outputs:
-#       branch_name: ${{ steps.validations.outputs.branch_name }}
-#       should_deploy: ${{ steps.validations.outputs.should_deploy}}
-#       non_prod_deploy: ${{ steps.validations.outputs.non_prod_deploy}}
-#       prod_deploy: ${{ steps.validations.outputs.prod_deploy}}
-#     steps:
-#       - name: Fetch Branch Name
-#         uses: aptyInc/gha-branch-name@master
-#         id: validations
-#       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-#       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-#       - name: Check out repository code
-#         uses: actions/checkout@v3
-#       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-#       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-#       - name: List files in the repository
-#         run: |
-#           ls ${{ github.workspace }}
-#       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Fetch Branch Name
+        uses: aptyInc/gha-branch-name@master
+        id: validatio
