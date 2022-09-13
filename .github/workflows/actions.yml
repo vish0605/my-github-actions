@@ -2,11 +2,11 @@ name: GHAssist
 'on':
   push:
     branches:
-      - main
+      - development
       - feature/*/main
   pull_request:
     branches:
-      - main
+      - development
       - feature/*/main
 jobs:
   rules:
@@ -21,3 +21,7 @@ jobs:
       - name: Fetch Branch Name
         uses: aptyInc/gha-branch-name@master
         id: validations
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
