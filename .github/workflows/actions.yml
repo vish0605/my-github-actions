@@ -18,7 +18,7 @@ jobs:
       base_branch: '${{ steps.validations.outputs.baseBranch}}'
     steps:
       - name: Fetch Branch Name
-        uses: aptyInc/gha-branch-name@master
+        uses: vishvajeet-apty/branch-validator@master
         id: validations
   demo:
     runs-on: ubuntu-latest
