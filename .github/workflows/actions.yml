@@ -22,6 +22,8 @@ jobs:
         id: validations
   demo:
     runs-on: ubuntu-latest
+    needs: rules
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo " The job was created here erer "
+      - run: echo ${{needs.rules.outputs.base_branch}}
